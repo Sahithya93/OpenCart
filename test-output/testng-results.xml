@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite1" duration-ms="266891" started-at="2018-02-14T11:40:16Z" finished-at="2018-02-14T11:44:43Z">
+    <groups>
+    </groups>
+    <test name="Test1" duration-ms="178496" started-at="2018-02-14T11:40:16Z" finished-at="2018-02-14T11:43:14Z">
+      <class name="com.wipro.opencart.tests.RegistrationAndAddToCart">
+        <test-method status="PASS" signature="launchBrowser(java.lang.String)[pri:0, instance:com.wipro.opencart.tests.RegistrationAndAddToCart@42d80b78]" name="launchBrowser" is-config="true" duration-ms="8542" started-at="2018-02-14T17:10:16Z" finished-at="2018-02-14T17:10:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method status="PASS" signature="registration(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.wipro.opencart.tests.RegistrationAndAddToCart@42d80b78]" name="registration" duration-ms="3092" started-at="2018-02-14T17:10:26Z" data-provider="User Details" finished-at="2018-02-14T17:10:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[aaa]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[bbb]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[b25@gmail.com]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1234567890]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[fadf]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[fasdf]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[500062]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[India]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[Andhra Pradesh]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[aaaaaaa]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[aaaaaaa]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- registration -->
+        <test-method status="PASS" signature="addReviewOnViewedProduct(java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.wipro.opencart.tests.RegistrationAndAddToCart@42d80b78]" name="addReviewOnViewedProduct" duration-ms="13923" started-at="2018-02-14T17:10:29Z" data-provider="ReviewInputValues" finished-at="2018-02-14T17:10:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[aaaa]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[This is first]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addReviewOnViewedProduct -->
+        <test-method status="PASS" signature="addReviewOnViewedProduct(java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.wipro.opencart.tests.RegistrationAndAddToCart@42d80b78]" name="addReviewOnViewedProduct" duration-ms="80586" started-at="2018-02-14T17:10:43Z" data-provider="ReviewInputValues" finished-at="2018-02-14T17:12:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[bbb]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[This is the second review by user]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addReviewOnViewedProduct -->
+        <test-method status="PASS" signature="addToWishlist()[pri:3, instance:com.wipro.opencart.tests.RegistrationAndAddToCart@42d80b78]" name="addToWishlist" duration-ms="5542" started-at="2018-02-14T17:12:03Z" finished-at="2018-02-14T17:12:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addToWishlist -->
+        <test-method status="PASS" signature="addToCart()[pri:4, instance:com.wipro.opencart.tests.RegistrationAndAddToCart@42d80b78]" name="addToCart" duration-ms="62048" started-at="2018-02-14T17:12:09Z" finished-at="2018-02-14T17:13:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addToCart -->
+        <test-method status="PASS" signature="logout()[pri:0, instance:com.wipro.opencart.tests.RegistrationAndAddToCart@42d80b78]" name="logout" is-config="true" duration-ms="3415" started-at="2018-02-14T17:13:11Z" finished-at="2018-02-14T17:13:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logout -->
+      </class> <!-- com.wipro.opencart.tests.RegistrationAndAddToCart -->
+    </test> <!-- Test1 -->
+    <test name="Test2" duration-ms="87488" started-at="2018-02-14T11:43:15Z" finished-at="2018-02-14T11:44:43Z">
+      <class name="com.wipro.opencart.tests.OrderHistory">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:com.wipro.opencart.tests.OrderHistory@146ba0ac]" name="launchBrowser" is-config="true" duration-ms="10588" started-at="2018-02-14T17:13:15Z" finished-at="2018-02-14T17:13:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method status="PASS" signature="orderHistory(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.wipro.opencart.tests.OrderHistory@146ba0ac]" name="orderHistory" duration-ms="76392" started-at="2018-02-14T17:13:26Z" data-provider="Authentication" finished-at="2018-02-14T17:14:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[aaa]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[b25@gmail.com]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[aaaaaaa]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- orderHistory -->
+        <test-method status="PASS" signature="logout()[pri:0, instance:com.wipro.opencart.tests.OrderHistory@146ba0ac]" name="logout" is-config="true" duration-ms="422" started-at="2018-02-14T17:14:42Z" finished-at="2018-02-14T17:14:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logout -->
+      </class> <!-- com.wipro.opencart.tests.OrderHistory -->
+      <class name="com.wipro.opencart.tests.RegistrationAndAddToCart">
+        <test-method status="PASS" signature="reports()[pri:0, instance:com.wipro.opencart.tests.RegistrationAndAddToCart@42d80b78]" name="reports" is-config="true" duration-ms="446" started-at="2018-02-14T17:10:15Z" finished-at="2018-02-14T17:10:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reports -->
+      </class> <!-- com.wipro.opencart.tests.RegistrationAndAddToCart -->
+    </test> <!-- Test2 -->
+  </suite> <!-- Suite1 -->
+</testng-results>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <parameter name="Browser" value="chrome"/>
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.wipro.opencart.tests.RegistrationAndAddToCart">
+        <methods>
+          <include name="addReviewOnViewedProduct"/>
+          <include name="addToCart"/>
+          <include name="reports"/>
+          <include name="logout"/>
+          <include name="addToWishlist"/>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- com.wipro.opencart.tests.RegistrationAndAddToCart -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
