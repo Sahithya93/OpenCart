@@ -25,6 +25,16 @@ public class OrderHistoryPage {
 	@FindBy(how=How.XPATH,using="//table[@class='list'][3]/tbody/tr[2]/td[6]/a")
 	WebElement returnBtn;
 	
+	@FindBy(linkText="Newsletter")
+	public  WebElement newsletter;
+	
+	
+	@FindBy(xpath="(//INPUT[@type='radio'])[1]")
+	public  WebElement newsletterradio;
+	
+	@FindBy(xpath="//INPUT[@type='submit']")
+	public  WebElement newssubmit;
+	
 	public OrderHistoryPage(WebDriver driver){
 		
 		this.driver=driver;
@@ -58,5 +68,20 @@ public class OrderHistoryPage {
 		returnBtn.click();
 		return new ProductReturnsPage(driver);
 	}
+	
+	public void subscribenewsletter(){
+		newsletter.click();
+		if(newsletterradio.isSelected()){
+
+			newssubmit.click();
+
+		}else{
+			newsletterradio.click();
+			newssubmit.click();
+	}
+	
+	
+	
+}
 
 }

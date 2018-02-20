@@ -51,15 +51,17 @@ public class ProductPage {
 	public ProductPage reviewOnProduct(String reviewerName,String reviewComments,String rating) throws Exception{
 		
 		reviewTab.click();
+		System.out.println(rating);
 		WebElement ratingValue = driver.findElement(By.xpath("//input[@value='"+rating+"']"));
 		String a=rating;
 		name.clear();
 		name.sendKeys(reviewerName);
 		inputText.clear();
 		inputText.sendKeys(reviewComments);
+		Thread.sleep(4000);
 		ratingValue.click();
 		//inputCaptcha.clear();
-		Thread.sleep(20000);
+		Thread.sleep(10000);
 		//To Enter Captcha Manually
 		/*System.out.println("Please enter Captcha:");
 		Scanner scanner = new Scanner(System.in);
@@ -100,8 +102,9 @@ public class ProductPage {
 		return this;
 	}
 	
-	public boolean isSuccessToastDisplayed(){
+	public boolean isSuccessToastDisplayed() throws Exception{
 		
+		Thread.sleep(2000);
 		return success.isDisplayed();
 	}
 	
