@@ -48,7 +48,10 @@ public class ExcelWriteData {
 	
 	public void createCellsAndWriteData(int cells, String writeText) throws Exception{
 		
+		Thread.sleep(3000);
 		Cell cell = row.createCell(cells);
+		Thread.sleep(3000);
+		System.out.println(writeText);
 		cell.setCellValue(writeText);
 		
 	
