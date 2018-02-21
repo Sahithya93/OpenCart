@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-  <test name="Test">
+<suite name="Suite" parallel="tests">
+  <test name="Chrome Test">
   <parameter name="Browser" value="chrome"></parameter>
     <classes>
       <class name="com.wipro.opencart.tests.OpenCartTests"/>
