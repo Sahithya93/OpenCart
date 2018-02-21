@@ -104,7 +104,7 @@ public class OpenCartTests {
 		registrationPage.fillDetailsAndRegister(firstname,lastname,emailAddress,telephoneNum,address1,cityName,postcodeNum,country,zone,pwd,confirm_pwd);
 		try{
 		Assert.assertEquals("Your Account Has Been Created!", driver.getTitle(),"Titles Not Matched: New Account Not Created");
-		extentTest.log(LogStatus.PASS, "Registration Successful");
+		extentTest.log(LogStatus.INFO, "Registration Successful");
 		System.out.println("Your Account Has Been Created!");
 		}catch(Exception e){
 			extentTest.log(LogStatus.INFO, "Registration is not successful");
@@ -167,7 +167,8 @@ public class OpenCartTests {
 		//Verifying count in 'Wishlist' link is equal to number of products in the page
 		Assert.assertEquals(myWishlistPage.valueInWishlistLink(), myWishlistPage.numOfProductsInTable(), "Value shown in wishlist link is different from number of records in the table");
 		//extentTest.log(LogStatus.INFO,"Product added: Value shown in wishlist link is equal to number of records in the table");
-		//extentTest.log(LogStatus.PASS, "Success: Product added to Wishlist and Verified");
+		extentTest.log(LogStatus.INFO, "Success: Product added to Wishlist and Verified");
+		
 		}
 	
 	//Test to add product to the cart
@@ -194,14 +195,8 @@ public class OpenCartTests {
 		
 		//Calling method to close the success toast
 		myWishlistPage.closeSuccessToast();
-		Thread.sleep(3000);
-		//Verifying the success toast is closed or not
-		try{
-		Assert.assertTrue(myWishlistPage.isSuccessToastDisplayed());
-		}catch(org.openqa.selenium.NoSuchElementException e){
-			//extentTest.log(LogStatus.PASS,"Add to cart: Success Message is closed");
-		}
-		
+		Thread.sleep(3000);		
+		extentTest.log(LogStatus.INFO, "Added product to Cart");
 		//Calling method to remove product from the list and click on continue
 		myWishlistPage.removeProductFromWishlistAndContinue();
 		
@@ -209,16 +204,19 @@ public class OpenCartTests {
 		//extentTest.log(LogStatus.PASS,"Success: Product added to Cart and removed automatically from Wishlist");
 		
 		//Calling method to logout from the account and verify logout message
+		
 		AccountLogoutPage accountLogoutPage =myWishlistPage.logout();
 		Assert.assertTrue(accountLogoutPage.getLogoutMessage().equals("Account Logout"), "Account Logout message is not displayed");
-		//extentTest.log(LogStatus.PASS,"Account Logout message is displayed and the user is signed out from the account");
 		System.out.println("Account Logout message is displayed and the user is signed out from the account");
+		
+		extentTest.log(LogStatus.PASS, "Registration And Add To Cart:Succcessful");
+		Reporter.log("Registration And Add To Cart:Succcessful");
 	}
 	
 	@Test(priority=5, dataProvider = "Authentication")
 	public void orderHistory(String firstname, String email, String password) throws Exception{
 		
-		extentReports.startTest("OrderHistory");
+		extentTest = extentReports.startTest("OrderHistory");
 		accountLoginPage = new AccountLoginPage(driver);
 		registrationPage = new RegistrationPage(driver);
 		
@@ -332,6 +330,9 @@ public class OpenCartTests {
 		System.out.println("Product Return Processed");
 		productReturnsPage.continueToHomePage();
 		homePage.logout();
+		
+		extentTest.log(LogStatus.PASS, "Order History:Successful");
+		Reporter.log("TC2: Order History Successful");
 	}
 	
 	
@@ -340,7 +341,7 @@ public class OpenCartTests {
 		
 		/*accountLoginPage = new AccountLoginPage(driver);
 		registrationPage = new RegistrationPage(driver);*/
-		extentReports.startTest("Product Comparison");
+		extentTest = extentReports.startTest("Product Comparison");
 		
 		//Calling methods to Login
 		accountLoginPage.clickOnLoginLink();
@@ -373,7 +374,9 @@ public class OpenCartTests {
 		
 		orderHistoryPage = yourOrderPage.navigateToOrderHistoryPage();
 		orderHistoryPage.subscribenewsletter();
-		
+		orderHistoryPage.logout();
+		extentTest.log(LogStatus.PASS, "Product Comparison:Successful");
+		Reporter.log("TC3:Product Comparison Successful" );
 	
 	}
 	
@@ -385,36 +388,17 @@ public class OpenCartTests {
 			//String capturedPath = CaptureScreenshot.capture(driver, "Failed");
 			extentTest.log(LogStatus.FAIL, result.getName());
 		}
+		
+		/*if(result.getStatus()==ITestResult.SUCCESS){
+			
+			//String capturedPath = CaptureScreenshot.capture(driver, "Failed");
+			extentTest.log(LogStatus.PASS, result.getName());
+		}*/
 		extentReports.endTest(extentTest);
 		extentReports.flush();
-		extentReports.close();
+		//extentReports.close();
 	}
 	
-	/*(@DataProvider(name="Authentication")
-	public Object[][] credentials() throws Exception{
-		
-		ExcelData exceldata = new ExcelData("D:/Test Data/OpenCart.xlsx",1);
-		int rows = exceldata.numOfRows();
-		Object[][] data = new Object[rows][3];
-		for(int row=0;row<rows;row++){
-			
-			data[row][0]=exceldata.getData(row+1, 0);
-			data[row][1]= exceldata.getData(row+1, 2);
-			data[row][2]= exceldata.getData(row+1, 9);
-		}
-		return data;
-	}*/
-	
-	//Logout from the account
-	@AfterTest
-	public void logout(){
-		
-		
-		//Close the report
-		/*extentReports.endTest(extentTest);
-		extentReports.flush();
-		extentReports.close();*/
-	}
 	
 	//Dataprovider - Sending inputs to add reviews to product
 	@DataProvider(name = "ReviewInputValues")
