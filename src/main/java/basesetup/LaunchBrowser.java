@@ -27,14 +27,17 @@ public class LaunchBrowser {
 		
 		capability = DesiredCapabilities.chrome();
         driver = new RemoteWebDriver(new URL("http://10.159.34.141:4444/wd/hub"), capability);
-        driver.get("http://10.207.182.108:81/opencart");
+        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+        driver.get("http://10.207.182.108:81/opencart");       
         
+}
+	if(Browser.equalsIgnoreCase("ie")){
+		
+		capability = DesiredCapabilities.internetExplorer();
+        driver = new RemoteWebDriver(new URL("http://10.159.34.141:4444/wd/hub"), capability);
+        driver.manage().timeouts().implicitlyWait(70, TimeUnit.SECONDS);
+        driver.get("http://10.207.182.108:81/opencart");       
         
-	
-	/*
-	
-	
-	}*/
 }
 	return driver;
 	}
